@@ -7,12 +7,10 @@ import { firstValueFrom } from 'rxjs';
 })
 export class ApiService {
 
-  constructor(protected httpService: HttpClient) { 
-  }
+  constructor(protected httpService: HttpClient) {}
 
-  private getGroups():Promise<any>{
+  getGroups():Promise<any>{
     let url = "url d'exemple"
     return firstValueFrom(this.httpService.get(url));
-
   }
 }

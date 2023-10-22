@@ -9,6 +9,7 @@ import { ModalNewGroupComponent } from './components/modal-new-group/modal-new-g
 import { GroupStatisticsComponent } from './pages/group-statistics/group-statistics.component';
 import { GroupComponent } from './pages/group/group.component';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
+import { HeaderComponent } from './components/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.c
     ModalNewGroupComponent,
     GroupStatisticsComponent,
     GroupComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
