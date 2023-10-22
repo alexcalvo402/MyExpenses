@@ -7,7 +7,16 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./my-groups.component.scss'],
 })
 export class MyGroupsComponent {
-  constructor(protected ApiService: ApiService) {
-    this.ApiService.getGroups().then((data: any) => {});
+
+  constructor(protected apiService: ApiService) {}
+
+  ngOnInit(){
+    this.apiService.getGroups().then((data:any)=>{
+
+    })
+  }
+
+  ngAfterViewInit(){
+    
   }
 }
