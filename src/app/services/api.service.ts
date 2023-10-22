@@ -3,16 +3,13 @@ import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
+  constructor(protected httpService: HttpClient) {}
 
-  constructor(protected httpService: HttpClient) { 
-  }
-
-  private getGroups():Promise<any>{
-    let url = "url d'exemple"
+  getGroups(): Promise<any> {
+    let url = "url d'exemple";
     return firstValueFrom(this.httpService.get(url));
-
   }
 }
