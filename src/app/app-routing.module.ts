@@ -6,11 +6,12 @@ import { GroupComponent } from './pages/group/group.component';
 const routes: Routes = [
   //{ path: '', component: HomeComponent },
   { path: 'group', component: GroupComponent },
-  { path: 'myGroups', component: MyGroupsComponent },
+  { path: 'myGroups', component: MyGroupsComponent, title: 'Mis Grupos' },
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
