@@ -5,8 +5,9 @@ import { GroupComponent } from './pages/group/group.component';
 
 const routes: Routes = [
   //{ path: '', component: HomeComponent },
-  { path: 'group', component: GroupComponent },
-  { path: 'myGroups', component: MyGroupsComponent, title: 'Mis Grupos' },
+  { path: '', component: MyGroupsComponent, title: 'Mis Grupos', children: [  
+    { path: 'group', component: GroupComponent, title: 'Mi Grupo'}
+  ] },
 ]
 
 @NgModule({

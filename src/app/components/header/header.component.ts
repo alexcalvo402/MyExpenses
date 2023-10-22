@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { AppComponent } from 'src/app/app.component';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,19 +7,12 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  title: string = '¿?';
-  isChildren: boolean = false;
+  @Input() title: string = '';
+  @Input() isChildren: boolean = false;
 
-  constructor(protected activatedRoute: ActivatedRoute) {}
+  constructor(protected router: Router) {}
 
-  ngOnInit() {
-    this.activatedRoute.title.subscribe((title: any) => {
-      this.title = title;
-    });
-    this.isChildren = this.activatedRoute.parent !== null && !(this.activatedRoute.parent.component! instanceof AppComponent);
-
-    console.log(this.activatedRoute.parent !== null);
-    console.log(!(this.activatedRoute.parent?.component! instanceof AppComponent));
-    console.log(typeof this.activatedRoute.parent?.component);
+  goBack(): void {
+    this.router.navigate(['../']);
   }
 }
