@@ -10,6 +10,8 @@ import { GroupStatisticsComponent } from './pages/group-statistics/group-statist
 import { GroupComponent } from './pages/group/group.component';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NavigationService } from './services/navigation.service';
+import { BackButtonDirective } from './directives/back-button.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { HeaderComponent } from './components/header/header.component';
     GroupStatisticsComponent,
     GroupComponent,
     ScrollToTopComponent,
-    HeaderComponent
+    HeaderComponent,
+    BackButtonDirective,
   ],
   imports: [
     BrowserModule,
