@@ -5,12 +5,14 @@ import { GroupComponent } from './pages/group/group.component';
 
 const routes: Routes = [
   //{ path: '', component: HomeComponent },
-  { path: 'group', component: GroupComponent },
-  { path: 'myGroups', component: MyGroupsComponent },
+  { path: '', component: MyGroupsComponent, title: 'Mis Grupos', children: [  
+    { path: 'group', component: GroupComponent, title: 'Mi Grupo'}
+  ] },
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
