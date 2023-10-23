@@ -26,9 +26,10 @@ import { BaseOutletComponent } from './components/base-outlet/base-outlet.compon
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
+<app-header [isChildren]="isChildren" [title]="title"></app-header>
+
 <div [@routeAnimations]="o && o.activatedRouteData 
       && o.activatedRouteData['animation']">
-      <app-header [isChildren]="isChildren" [title]="title"></app-header>
 
     <router-outlet #o="outlet"></router-outlet>
 </div>

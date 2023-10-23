@@ -6,10 +6,8 @@ import { BaseOutletComponent } from './components/base-outlet/base-outlet.compon
 
 const routes: Routes = [
   //{ path: '', component: HomeComponent },
-  { path: '', component: BaseOutletComponent, children: [  
     { path: '', component: MyGroupsComponent, title: 'Mis Grupos' , data: {animation: 'Home'}},
     { path: 'group', component: GroupComponent, title: 'Mi Grupo' , data: {animation: 'Article'}}
-  ]},
 ]
 
 @NgModule({

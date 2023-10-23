@@ -11,9 +11,7 @@ export class MyGroupsComponent {
   constructor(protected apiService: ApiService) {}
 
   ngOnInit(){
-    this.apiService.getGroups().then((data:any)=>{
-
-    })
+    
   }
 
   ngAfterViewInit(){

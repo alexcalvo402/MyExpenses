@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs';
 import { slideInAnimation } from './route-animation';
+import { BaseOutletComponent } from './components/base-outlet/base-outlet.component';
+import { MyGroupsComponent } from './pages/my-groups/my-groups.component';
 
 @Component({
   selector: 'app-root',
@@ -27,10 +29,8 @@ export class AppComponent {
 
         route!.title.subscribe((title: any) => {
           this.title = title;
-          this.isChildren =
-          route.parent != null &&
-            !(route.parent?.component == AppComponent);
-        });
+          this.isChildren = route.component != MyGroupsComponent;
       });
+    })
   }
 }
