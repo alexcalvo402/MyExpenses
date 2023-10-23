@@ -1,6 +1,8 @@
-<header class="bg-blue-chill-300 h-[64px] text-center grid grid-cols-12">
+<header class="bg-blue-chill-400 h-[64px] text-center grid grid-cols-12 shadow-lg">
     <div *ngIf="isChildren" (click)="goBack()" class="col-span-2 flex items-center justify-center">
-        <i class="fa fa-arrow-left text-white text-[24px]"></i>
+        <div class="bg-blue-chill-600 hover:bg-blue-chill-700 p-2 rounded">
+            <i class="fa fa-arrow-left text-white text-[24px] w-8"></i>
+        </div>
     </div>
     <div [ngClass]="isChildren ? 'col-span-9' : 'col-span-12'" class="flex items-center justify-center">
         <h1 class="uppercase text-2xl text-white font-bold">{{title}}</h1>
