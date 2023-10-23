@@ -10,6 +10,8 @@ import { GroupStatisticsComponent } from './pages/group-statistics/group-statist
 import { GroupComponent } from './pages/group/group.component';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 import { HeaderComponent } from './components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BaseOutletComponent } from './components/base-outlet/base-outlet.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { HeaderComponent } from './components/header/header.component';
     GroupComponent,
     ScrollToTopComponent,
     HeaderComponent,
+    BaseOutletComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
