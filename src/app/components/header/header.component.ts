@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +10,10 @@ export class HeaderComponent {
   @Input() title: string = '';
   @Input() isChildren: boolean = false;
 
-  constructor(protected router: Router) {}
+  constructor(protected router: Router, private route: ActivatedRoute) {}
 
   goBack(): void {
-    this.router.navigate(['../']);
+    console.log(this.router.url)
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 }
