@@ -9,8 +9,8 @@ const routes: Routes = [
   //{ path: '', component: HomeComponent },
     { path: '', component: MyGroupsComponent, title: 'Mis Grupos' , data: {animation: 'Home'}},
     { path: 'group',children:[
-      { path: '', component: GroupComponent, title: 'Mi Grupo' , data: {animation: 'Article'}},
-      { path: 'expense', component: ExpenseComponent, title: 'Nuevo gasto' , data: {animation: 'Article'}}
+      { path: '', component: GroupComponent, title: 'Mi Grupo' , data: {animation: 'Group'}},
+      { path: 'expense', component: ExpenseComponent, title: 'Nuevo gasto' , data: {animation: 'Expense'}}
 
     ]},
 

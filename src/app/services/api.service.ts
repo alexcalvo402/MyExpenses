@@ -12,4 +12,9 @@ export class ApiService {
     let url = "url d'exemple";
     return firstValueFrom(this.httpService.get(url));
   }
+
+  addExpense(i_params:any): Promise<any> {
+    let url = "url d'exemple";
+    return firstValueFrom(this.httpService.post(url,i_params));
+  }
 }

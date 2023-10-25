@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BaseOutletComponent } from './components/base-outlet/base-outlet.component';
 import { ExpenseComponent } from './pages/group/expense/expense.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ExpenseComponent } from './pages/group/expense/expense.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
   ],
