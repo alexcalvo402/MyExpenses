@@ -17,7 +17,7 @@ export class ExpenseComponent {
 
   addExpense(){
     let i_params = this.form.value;
-    this.apiService.addExpense(i_params);
+    this.apiService.post("addExpense",i_params);
 
 
     this.location.back();
