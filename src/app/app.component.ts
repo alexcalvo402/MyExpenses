@@ -9,8 +9,6 @@ import { MyGroupsComponent } from './pages/my-groups/my-groups.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [ slideInAnimation ]
-
 })
 export class AppComponent {
   title = 'MyExpenses';

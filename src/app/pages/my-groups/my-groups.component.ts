@@ -37,4 +37,12 @@ export class MyGroupsComponent {
       },
     ];
   }
+  
+  ngAfterViewInit(){
+    console.log("hi");
+    
+    this.apiService.getGroups().then((data:any)=>{
+      console.log(data); 
+    }) 
+  }
 }

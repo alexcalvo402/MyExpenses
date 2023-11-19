@@ -1,37 +1,36 @@
+<div *ngFor="let expense of expenses"
+    style="border-bottom: 1px solid rgb(233, 233, 233); height: 70px; background: white; display:grid; grid-template-columns: 80% 20%; padding: 10px 15px 10px 15px">
+    <div>
+        <p style="font-size: larger; color: #3b757f; font-weight: 600;">{{expense.title}}</p>
+        <p>Ha sido pagado por <span style="font-weight: bold;">{{expense.buyer}}</span></p>
+    </div>
+    <div>
+        <p style="font-size: larger; color:#3b757f; font-weight: 600;">{{expense.price | number:'1.2-2'}} €</p>
+        <p>{{expense.date | date: 'dd/MM/yyyy'}}</p>
+    </div>
+</div>
 
-    <div *ngFor="let expense of expenses"
-        style="border-bottom: 1px solid rgb(233, 233, 233); height: 70px; background: white; display:grid; grid-template-columns: 80% 20%; padding: 10px 15px 10px 15px">
+
+<footer style="position: absolute !important; bottom: 0px; height: 80px; width: 100%; background: #1A2C32">
+    <div style="position:relative">
+        <div style="position:absolute;  top: -30px; width: 100%; ">
+            <div style="display:flex; justify-content: center">
+                <button style="background:#92cace; width: 60px; height: 60px; border-radius: 60px; color:white"
+                    routerLink="expense">
+                    <i class="fa fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div style="display:flex; justify-content: space-between; padding: 10px;">
         <div>
-            <p style="font-size: larger; color: #3b757f; font-weight: 600;">{{expense.title}}</p>
-            <p>Ha sido pagado por <span style="font-weight: bold;">{{expense.buyer}}</span></p>
+            <p style="color:rgb(235, 235, 235); text-align:left">MI TOTAL</p>
+            <p style="color:white; font-weight: 700; text-align:left">{{myTotal | number:'1.2-2'}} €</p>
         </div>
         <div>
-            <p style="font-size: larger; color:#3b757f; font-weight: 600;">{{expense.price | number:'1.2-2'}} €</p>
-            <p>{{expense.date | date: 'dd/MM/yyyy'}}</p>
+            <p style="color:rgb(235, 235, 235); text-align:right">GASTO TOTAL</p>
+            <p style="color:white; font-weight: 700; text-align:right">{{total | number:'1.2-2'}} €</p>
         </div>
     </div>
-
-
-    <footer style="position: fixed; bottom: 0px; height: 80px; width: 100%; background: #1A2C32">
-        <div style="position:relative">
-            <div style="position:absolute;  top: -30px; width: 100%; ">
-                <div style="display:flex; justify-content: center">
-                    <button style="background:#92cace; width: 60px; height: 60px; border-radius: 60px; color:white"
-                        routerLink="expense">
-                        <i class="fa fa-solid fa-plus"></i>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-        <div style="display:flex; justify-content: space-between; padding: 10px;">
-            <div>
-                <p style="color:rgb(235, 235, 235); text-align:left">MI TOTAL</p>
-                <p style="color:white; font-weight: 700; text-align:left">{{myTotal | number:'1.2-2'}} €</p>
-            </div>
-            <div>
-                <p style="color:rgb(235, 235, 235); text-align:right">GASTO TOTAL</p>
-                <p style="color:white; font-weight: 700; text-align:right">{{total | number:'1.2-2'}} €</p>
-            </div>
-        </div>
-    </footer>
+</footer>

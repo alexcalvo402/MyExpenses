@@ -1,20 +1,32 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  constructor(protected httpService: HttpClient) {}
+  constructor(protected httpService: HttpClient, protected userService: UserService) {}
 
-  getGroups(): Promise<any> {
-    let url = "url d'exemple";
-    return firstValueFrom(this.httpService.get(url));
+  post(function_name:string,params:any = {}){
+    let url = "http://83.41.22.60/api.php";
+    let headers:HttpHeaders = new HttpHeaders().set('content-type','application/json');
+    let data = {
+      "function":function_name,
+      "params":params
+    }
+    let body = JSON.stringify(data);
+
+    return firstValueFrom(this.httpService.post(url, body, {headers:headers}));
   }
 
-  addExpense(i_params:any): Promise<any> {
-    let url = "url d'exemple";
-    return firstValueFrom(this.httpService.post(url,i_params));
+  getGroups(){
+    let user_id = this.userService.getUser().id;
+    let params = {"user_id":user_id};
+    return this.post("getGroups",params);
   }
+
+
+
 }

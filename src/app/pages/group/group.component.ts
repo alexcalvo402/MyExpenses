@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { expense } from '../../interfaces/expense';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-group',
@@ -10,12 +11,17 @@ export class GroupComponent {
   expenses:Array<expense> = [];
   myTotal = 0;
   total = 0;
+  id = "11fk33b";
+
+  constructor(protected apiService:ApiService){}
 
   ngOnInit(){
-    this.getExpenses();
+    this.apiService.post("getGroupExpenses",this.id);
   }
 
   getExpenses(){
+
+
     this.expenses = [{
       title: "Hotel",
       buyer: "Yo",
@@ -36,7 +42,7 @@ export class GroupComponent {
     }];
 
     this.myTotal = 34.65;
-    this.total = 0;
+    this.total = 170;
 
   }
 
