@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { UserService } from './user.service';
 import { expense, expenseToAdd, groupExpense } from '../interfaces/expense';
-import { groupMyGroup } from '../interfaces/group/groupMyGroup';
+import { groupMyGroup } from '../interfaces/group';
 
 @Injectable({
   providedIn: 'root',
@@ -21,12 +21,12 @@ export class ApiService {
     return firstValueFrom(this.httpService.get(url));
   }
 
-  getGroups(user_id:string){
+  getGroups(user_id:number){
     let url = `http://${this.ip}/my-groups/getGroups.php?user_id=${user_id}`;
     return this.get(url) as Promise<Array<groupMyGroup>>;
   }
 
-  getGroupExpenses(group_id:string){
+  getGroupExpenses(group_id:number){
 
     let url = `http://${this.ip}/group/getExpenses.php?group_id=${group_id}`;
     return this.get(url) as Promise<Array<groupExpense>>;

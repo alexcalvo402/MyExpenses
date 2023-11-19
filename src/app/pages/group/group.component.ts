@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { expense, expenseToAdd, groupExpense } from '../../interfaces/expense';
 import { ApiService } from 'src/app/services/api.service';
-import { FormGroup, NonNullableFormBuilder } from '@angular/forms';
+import { NonNullableFormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { group } from 'src/app/interfaces/group';
-import { groupUser } from 'src/app/interfaces/groupUser';
 
 @Component({
   selector: 'app-group',
@@ -15,7 +13,7 @@ export class GroupComponent {
   expenses: Array<groupExpense> = [];
   myTotal = 0;
   total = 0;
-  id = "113";
+  id = "1";
 
   constructor(protected apiService: ApiService, protected fb: NonNullableFormBuilder, protected activatedRoute: ActivatedRoute) { }
 

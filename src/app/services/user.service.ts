@@ -10,13 +10,13 @@ export class UserService {
   getUser():user{
 
     return {
-      "id":"2",
+      "id":2,
       "name":"Ivan",
     }
   }
 }
 
 interface user{
-  id:string,
+  id:number,
   name:string,
 }
