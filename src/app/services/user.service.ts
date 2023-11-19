@@ -10,7 +10,7 @@ export class UserService {
   getUser():user{
 
     return {
-      "id":"1",
+      "id":"2",
       "name":"Ivan",
     }
   }
