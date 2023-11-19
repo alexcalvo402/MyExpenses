@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { expense } from '../../interfaces/expense';
 import { ApiService } from 'src/app/services/api.service';
+import { FormGroup, NonNullableFormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-group',
@@ -13,10 +15,15 @@ export class GroupComponent {
   total = 0;
   id = "11fk33b";
 
-  constructor(protected apiService:ApiService){}
+  constructor(protected apiService:ApiService,protected fb: NonNullableFormBuilder,protected activatedRoute:ActivatedRoute){}
 
   ngOnInit(){
-    this.apiService.post("getGroupExpenses",this.id);
+    //this.apiService.post("getGroupExpenses",this.id);
+    this.getExpenses();
+
+    this.activatedRoute.data.subscribe((data)=>{
+      
+    })
   }
 
   getExpenses(){
@@ -43,6 +50,18 @@ export class GroupComponent {
 
     this.myTotal = 34.65;
     this.total = 170;
+
+  }
+
+  form:FormGroup = this.fb.group({
+    "title": ['',],
+    "quantity": ['',]
+  })
+  
+  addExpense(){
+    let i_params = this.form.value;
+    this.apiService.post("addExpense",i_params);
+
 
   }
 
