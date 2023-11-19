@@ -55,6 +55,7 @@ export class AppComponent {
     if (event instanceof NavigationError) {
       this.loading = false
     }
+
   }
 
 
