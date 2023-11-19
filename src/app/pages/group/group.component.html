@@ -10,6 +10,31 @@
     </div>
 </div>
 
+<form [formGroup]="form">
+    <div class="form-container">
+
+        <!--div class="form-group">
+
+        <div >
+            
+            <i class="fa fa-solid fa-camera" style="border: 1px solid black; padding: 5px; border-radius: 5px; color: rgb(190, 190, 190);" (click)="photoRef.click()"></i>
+            
+            <input type="file" style="display: none;" id="photo" #photoRef >
+        </div>
+
+    </div-->
+        <div class="form-group">
+            <input type="text" placeholder=" " id="title" name="title" formControlName="title">
+            <label for="name">Titulo</label>
+        </div>
+        <div class="form-group">
+            <input type="number" placeholder=" " id="quantity" name="quantity" formControlName="quantity">
+            <label for="lastname">Cantidad</label>
+        </div>
+       
+        <button class="submit-button" type="button" (click)="addExpense()">Submit</button>
+    </div>
+</form>
 
 <footer style="position: absolute !important; bottom: 0px; height: 80px; width: 100%; background: #1A2C32">
     <div style="position:relative">

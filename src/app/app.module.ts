@@ -12,7 +12,6 @@ import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.c
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BaseOutletComponent } from './components/base-outlet/base-outlet.component';
-import { ExpenseComponent } from './pages/group/expense/expense.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ScrollToTopComponent,
     HeaderComponent,
     BaseOutletComponent,
-    ExpenseComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,18 +7,12 @@ import { UserService } from './user.service';
   providedIn: 'root',
 })
 export class ApiService {
+  ip = "83.41.22.60:2020";
   constructor(protected httpService: HttpClient, protected userService: UserService) {}
 
-  post(function_name:string,params:any = {}){
-    let url = "http://83.41.22.60:2020/api.php";
-    let headers:HttpHeaders = new HttpHeaders().set('content-type','application/json');
-    let data = {
-      "function":function_name,
-      "params":params
-    }
-    let body = JSON.stringify(data);
-
-    return firstValueFrom(this.httpService.post(url, body, {headers:headers}));
+  post(url:string,params:any = {}){
+    let body = JSON.stringify(params);
+    return firstValueFrom(this.httpService.post(url, body));
   }
 
   get(url:string){
@@ -27,8 +21,14 @@ export class ApiService {
 
   getGroups(){
     let user_id = this.userService.getUser().id;
-    let url = `http://83.41.22.60:2020/getGroups.php?${user_id}`;
+    let url = `http://${this.ip}/my-groups/getGroups.php?user_id=${user_id}`;
     return this.get(url);
+  }
+
+  addGroup(params:any){
+
+    let url = `http://${this.ip}/my-groups/getGroups.php?user`;
+    this.post(url,params);
   }
 
 
