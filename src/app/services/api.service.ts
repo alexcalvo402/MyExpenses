@@ -19,9 +19,14 @@ export class ApiService {
     return firstValueFrom(this.httpService.get(url));
   }
 
-  getGroups(){
-    let user_id = this.userService.getUser().id;
+  getGroups(user_id:string){
     let url = `http://${this.ip}/my-groups/getGroups.php?user_id=${user_id}`;
+    return this.get(url);
+  }
+
+  getExpenses(group_id:string){
+
+    let url = `http://${this.ip}/group/getExpenses.php?group_id=${group_id}`;
     return this.get(url);
   }
 

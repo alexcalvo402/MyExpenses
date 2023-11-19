@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { group } from 'src/app/interfaces/group';
 import { ApiService } from 'src/app/services/api.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-my-groups',
@@ -10,7 +11,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class MyGroupsComponent {
   myGroups: Array<group> = [];
 
-  constructor(protected apiService: ApiService) {}
+  constructor(protected apiService: ApiService, protected userService:UserService) {}
 
   ngOnInit() {
     this.getMyGroups();
@@ -40,8 +41,8 @@ export class MyGroupsComponent {
   
   ngAfterViewInit(){
     console.log("hi");
-    
-    this.apiService.getGroups().then((data:any)=>{
+    let user_id = this.userService.getUser().id;
+    this.apiService.getGroups(user_id).then((data:any)=>{
       console.log(data); 
     }) 
   }
