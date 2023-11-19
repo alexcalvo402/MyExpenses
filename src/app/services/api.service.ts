@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { UserService } from './user.service';
-import { expense, groupExpense } from '../interfaces/expense';
+import { expense, expenseToAdd, groupExpense } from '../interfaces/expense';
 import { group } from '../interfaces/group';
 
 @Injectable({
@@ -38,7 +38,7 @@ export class ApiService {
     return this.post(url,params);
   }
 
-  addGroupExpense(params:expense){
+  addGroupExpense(params:expenseToAdd){
 
     let url = `http://${this.ip}/group/addGroupExpense.php`;
     return this.post(url,params);
