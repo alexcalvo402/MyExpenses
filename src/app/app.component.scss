@@ -1,0 +1,16 @@
+.backdrop{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #493e3e;
+    z-index: 10;
+    opacity: 0.2;
+}
+
+svg{
+    background: none;
+    position: absolute;
+    top: calc(50% - 35px);
+    left: calc(50% - 35px);
+}

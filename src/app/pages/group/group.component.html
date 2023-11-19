@@ -2,10 +2,10 @@
     style="border-bottom: 1px solid rgb(233, 233, 233); height: 70px; background: white; display:grid; grid-template-columns: 80% 20%; padding: 10px 15px 10px 15px">
     <div>
         <p style="font-size: larger; color: #3b757f; font-weight: 600;">{{expense.title}}</p>
-        <p>Ha sido pagado por <span style="font-weight: bold;">{{expense.buyer}}</span></p>
+        <p>Ha sido pagado por <span style="font-weight: bold;">{{expense.user_name}}</span></p>
     </div>
     <div>
-        <p style="font-size: larger; color:#3b757f; font-weight: 600;">{{expense.price | number:'1.2-2'}} €</p>
+        <p style="font-size: larger; color:#3b757f; font-weight: 600;">{{expense.amount | number:'1.2-2'}} €</p>
         <p>{{expense.date | date: 'dd/MM/yyyy'}}</p>
     </div>
 </div>
