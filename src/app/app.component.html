@@ -5,7 +5,7 @@
 
 <app-scroll-to-top></app-scroll-to-top>
 
-
+@if(loading){
 <svg width="70" height="70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"
     class="lds-rolling" style="background: none;">
     <circle class="loader-svg" cx="50" cy="50" fill="none" stroke="#325158" stroke-width="var(--stroke-width)"
@@ -62,3 +62,4 @@
 </svg>
 
 <div class="backdrop"></div>
+}
