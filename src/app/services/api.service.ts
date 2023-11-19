@@ -10,7 +10,7 @@ export class ApiService {
   constructor(protected httpService: HttpClient, protected userService: UserService) {}
 
   post(function_name:string,params:any = {}){
-    let url = "http://83.41.22.60/api.php";
+    let url = "http://83.41.22.60:2020/api.php";
     let headers:HttpHeaders = new HttpHeaders().set('content-type','application/json');
     let data = {
       "function":function_name,
@@ -21,10 +21,14 @@ export class ApiService {
     return firstValueFrom(this.httpService.post(url, body, {headers:headers}));
   }
 
+  get(url:string){
+    return firstValueFrom(this.httpService.get(url));
+  }
+
   getGroups(){
     let user_id = this.userService.getUser().id;
-    let params = {"user_id":user_id};
-    return this.post("getGroups",params);
+    let url = `http://83.41.22.60:2020/getGroups.php?${user_id}`;
+    return this.get(url);
   }
 
 
