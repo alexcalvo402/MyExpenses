@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { expense } from '../../interfaces/expense';
+import { groupExpense } from '../../interfaces/expense';
 import { ApiService } from 'src/app/services/api.service';
 import { FormGroup, NonNullableFormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./group.component.scss']
 })
 export class GroupComponent {
-  expenses:Array<any> = [];
+  expenses:Array<groupExpense> = [];
   myTotal = 0;
   total = 0;
   id = "11fk33b";
@@ -29,7 +29,7 @@ export class GroupComponent {
   form:FormGroup = this.fb.group({
     "title": ['',],
     "quantity": ['',]
-  })
+  });
   
   addExpense(){
     let i_params = this.form.value;

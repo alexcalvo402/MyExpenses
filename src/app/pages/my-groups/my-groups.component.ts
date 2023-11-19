@@ -25,8 +25,8 @@ export class MyGroupsComponent {
         expenses: [
           {
             title: 'Pizza',
-            buyer: 'Iván',
-            price: 20,
+            user_name: 'Iván',
+            amount: 20,
             date: new Date(),
           },
         ],
