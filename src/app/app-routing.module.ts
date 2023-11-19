@@ -27,7 +27,7 @@ const routes: Routes = [
     component: GroupComponent,
     title: 'Mi Grupo',
     data: { animation: 'Group' },
-    resolve: { expenses: (route: ActivatedRouteSnapshot) => inject(ApiService).getGroupExpenses(route.paramMap.get('id')!) }
+    resolve: { expenses: (route: ActivatedRouteSnapshot) => inject(ApiService).getGroupExpenses(parseInt(route.paramMap.get('id')!)) }
   }
 
 ]
