@@ -1,7 +1,10 @@
 interface expense {
   title: string;
   amount: number;
-  date: Date;
+  user_id:number,
+  group_id:number,
+  date?: Date;
+  expense_id?:number
 }
 
 interface groupExpense extends expense{
