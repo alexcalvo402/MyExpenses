@@ -40,7 +40,6 @@ export class MyGroupsComponent {
   }
   
   ngAfterViewInit(){
-    console.log("hi");
     let user_id = this.userService.getUser().id;
     this.apiService.getGroups(user_id).then((data:any)=>{
       console.log(data); 
