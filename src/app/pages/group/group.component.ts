@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { expense } from '../../interfaces/expense';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -45,11 +46,4 @@ export class GroupComponent {
 
   }
 
-}
-
-interface expense{
-  title: string;
-  buyer: string;
-  price: number;
-  date: Date;
 }
