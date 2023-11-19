@@ -17,12 +17,8 @@ export class MyGroupsComponent {
   ngAfterViewInit(){
     console.log("hi");
     
-    this.getGroups();
-  }
-
-  getGroups(){
     this.apiService.getGroups().then((data:any)=>{
       console.log(data); 
-    })  
+    }) 
   }
 }

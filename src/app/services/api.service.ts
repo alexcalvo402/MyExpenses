@@ -10,7 +10,7 @@ export class ApiService {
   constructor(protected httpService: HttpClient, protected userService: UserService) {}
 
   post(function_name:string,params:any = {}){
-    let url = "http://192.168.1.35/api.php";
+    let url = "http://83.41.22.60/api.php";
     let headers:HttpHeaders = new HttpHeaders().set('content-type','application/json');
     let data = {
       "function":function_name,
