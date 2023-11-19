@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { expense } from '../../interfaces/expense';
 
 @Component({
   selector: 'app-group',
@@ -39,11 +40,4 @@ export class GroupComponent {
 
   }
 
-}
-
-interface expense{
-  title: string;
-  buyer: string;
-  price: number;
-  date: Date;
 }

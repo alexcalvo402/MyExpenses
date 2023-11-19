@@ -68,6 +68,25 @@
             </div>
         </div>
     </div>
+
+    <div *ngFor="let myGroup of myGroups" class="grid grid-cols-12 p-4 bg-blue-chill-300/20 hover:bg-blue-chill-300/50 rounded-full cursor-pointer mt-4">
+        <div class="col-span-2">
+            <img src="https://images-platform.99static.com/CU9NLP8fjGFK0udDktgTtGXmNzI=/141x137:1734x1730/fit-in/500x500/99designs-contests-attachments/93/93939/attachment_93939168" class="rounded-full h-[60px] w-[84px]">
+        </div>
+        <div class="col-span-8 grid grid-rows-2">
+            <div class="row-span-1">
+                <p class="ml-4 text-xl font-bold ">{{myGroup.title}}</p>
+            </div>
+            <div class="row-span-1">
+                <p class="ml-4 text-sm">Pago de: <span class="text-md font-bold text-blue-chill-900"></span> | Dinero: <span class="text-md font-bold text-blue-chill-900">2€</span></p>
+            </div>
+        </div>
+        <div class="col-span-2 grid grid-rows-2 items-center text-center">
+            <div class="row-span-1">
+                <p class="text-sm font-bold ">13:02</p>
+            </div>
+        </div>
+    </div>
     
     <footer class="fixed bottom-0 h-[50px] w-full">
             <div class="absolute top-[-30px] w-full">
