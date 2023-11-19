@@ -1,6 +1,14 @@
-export interface expense {
+interface expense {
   title: string;
-  buyer: string;
-  price: number;
-  date: Date;
+  amount: number;
+  user_id:number,
+  group_id:number,
+  date?: Date;
+  expense_id?:number
 }
+
+interface groupExpense extends expense{
+  user_name:string
+}
+
+export {expense, groupExpense}
