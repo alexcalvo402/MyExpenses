@@ -8,7 +8,8 @@ interface expense {
 }
 
 interface groupExpense extends expense{
-  user_name:string
+  user_name:string,
+  user_id:number
 }
 
 interface expenseToAdd{
