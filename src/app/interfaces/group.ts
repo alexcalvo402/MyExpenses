@@ -7,7 +7,7 @@ interface group {
 interface groupMyGroup extends group {
     last_user_name: string;
     last_amount: number;
-    date: string;
+    date: Date;
     amount_due: number;
 }
 
