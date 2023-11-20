@@ -1,6 +1,6 @@
 <section class="p-2">
 
-    <div *ngFor="let group of myGroups" [ngClass]="{'bg-red-300/20' : group.last_amount > 0, 'hover:bg-red-300/50': group.last_amount > 0}" class="grid grid-cols-12 p-4 bg-blue-chill-300/20 hover:bg-blue-chill-300/50 rounded-full cursor-pointer mt-4" [routerLink]="['/group', group.group_id]">
+    <div *ngFor="let group of myGroups" [ngClass]="{'bg-blue-chill-300/20 hover:bg-blue-chill-300/50 ': group.amount_due == 0, 'bg-red-300/20 hover:bg-red-300/50': group.amount_due > 0}" class="grid grid-cols-12 p-4 rounded-full cursor-pointer mt-4" [routerLink]="['/group', group.group_id]">
         <div class="col-span-2">
             <img [src]="group.image" class="rounded-full h-[60px] w-[84px]">
         </div>
@@ -9,7 +9,7 @@
                 <p class="ml-4 text-xl font-bold ">{{ group.name }}</p>
             </div>
             <div class="row-span-1">
-                @if(group.last_amount > 0) {
+                @if(group.amount_due > 0) {
                     <marquee class="ml-4 text-sm text-red-500">¡Falta por pagar <b class="text-md">{{ group.amount_due }}€</b>!</marquee>
                 } @else {
                     <p class="ml-4 text-sm">Pago de: <span class="text-md font-bold text-blue-chill-900">{{ group.last_user_name }}</span> | Dinero: <span class="text-md font-bold text-blue-chill-900">{{ group.last_amount }}€</span></p>
